@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <a class="btn btn-danger btn-sm" href="{% url 'pars' %}"><h4>PARSE</h4></a>
+    {% for i in news %}
+        <div>{{ i.website_settings }} - {{ i.url }} - {{ i.title }}</div>
+    {% empty %}
+        no result
+    {% endfor %}
+
+{% endblock %}
